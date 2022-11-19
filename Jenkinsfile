@@ -18,19 +18,20 @@ pipeline {
 
     stages{
       
-        stage("Build"){
+        stage("Clone"){
             steps{
-              echo 'Building the application'
+              sh "rm -rf *"
+              sh "git clone https://github.com/rjacques89/java-certification.git"
             }
         }
 
-        stage("Test"){
+        stage("Build"){
             steps{
                echo 'Testing the application'
             }
         }
 
-        stage("Deploy"){
+        stage("Run"){
             steps{
                 echo 'Deploying the application'
             }
