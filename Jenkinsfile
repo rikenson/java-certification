@@ -1,20 +1,5 @@
-
-
 pipeline {
     agent any
-
-    environment {
-
-    }
-
-    parameters {
-
-    }
-
-
-    tools {
-
-    }
 
     stages{
       
@@ -29,19 +14,15 @@ pipeline {
         stage("Build"){
             steps{
                echo 'Testing the application...'
-               sh 'cd java-certification/ && javac chapter/Forest.java'
+               sh 'cd java-certification/ && javac Forest.java'
             }
         }
 
         stage("Run"){
             steps{
                 echo 'Deploying the application...'
-                sh 'java chapter.Forest'
+                sh 'java Forest'
             }
         }
     }
-}
-
-nodes{
-   //ajouter les script groovy
 }
